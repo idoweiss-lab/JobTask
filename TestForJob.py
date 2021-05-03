@@ -37,15 +37,20 @@ FileArray = []#array that contains all the lines
 FileArray = load_file(FILE_PATH)
 
 ArrayLen = len(FileArray)
+
 for num in range(ArrayLen):
     if("Title" in FileArray[num]):#check if the string Ttile is in the line
         GitNote.append(FunGitNote(FileArray,num))#add the string from the function to the array
     elif ("[ NOTE_MISSING ]" in FileArray[num]):#check if the string [ NOTE_MISSING ] is in the line
         WithoutGitNote.append(FunWithoutGitNote(FileArray,num))#add the string from the function
+
+
 for Error in GitNote:
     if(Error not in CheckDuplicateEror):#check for duplicate errors
         print(Error)
     CheckDuplicateEror += Error#add the error to the array
+
+
 for NoComment in WithoutGitNote:
     if(NoComment.split("@")[1].split(" ,")[0] not in CheckOwnerNoCommaent):#check for owner that dont need to print
         print(NoComment)
