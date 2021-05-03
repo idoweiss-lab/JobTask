@@ -10,9 +10,9 @@ def FunGitNote(arr , IndexInArray):
            issue = line.replace('Issue: ','')
            issue = issue.replace("\n", "")
            return "["+issue+"]"+ " " + Title
-'''
+"""
 return the vaule [NOTE_MISSING] commit #number @owner , Please add git notes to this commit for missing comment on git
-'''
+"""
 def FunWithoutGitNote(arr , IndexInArray):
     NoteMissing = FileArray[num]
     for line in arr[IndexInArray:]:
@@ -21,16 +21,16 @@ def FunWithoutGitNote(arr , IndexInArray):
            owner = owner.replace("\n", "")
            return NoteMissing + "@"+owner+ " , Please add git notes to this commit!"
 
-'''
+"""
 return the lines from file
-'''
+"""
 def load_file(path):
     with open(path, "r") as f:
         return f.readlines()
 
-'''
+"""
 print the error + title of the git notes
-'''
+"""
 def summarize_git_note(git_note):
     CheckDuplicateEror = ""  # array for check duplicate errors
     for Error in GitNote:
@@ -38,9 +38,9 @@ def summarize_git_note(git_note):
             print(Error)
         CheckDuplicateEror += Error  # add the error to the array
 
-'''
+"""
 print the note missing + commit and the owner with request to add commit
-'''
+"""
 def summarize_git_without_note(git_without_note):
     CheckOwnerNoComment = ["chdauto", "syspdbuild", "syspdbuild2"]#owners that dont need to print the missing commit
     for NoComment in WithoutGitNote:
