@@ -29,7 +29,7 @@ def load_file(path):
         return f.readlines()
 
 CheckDuplicateEror = ""#array for check duplicate errors
-CheckOwnerNoCommaent = ["chdauto", "syspdbuild", "syspdbuild2"]#contains all the owner that dont need to print
+CheckOwnerNoComment = ["chdauto", "syspdbuild", "syspdbuild2"]#contains all the owner that dont need to print
 GitNote = []#array that contains all the errors with note
 WithoutGitNote = []#array that contains all the missing note
 FileArray = []#array that contains all the lines
@@ -52,6 +52,6 @@ for Error in GitNote:
 
 
 for NoComment in WithoutGitNote:
-    if(NoComment.split("@")[1].split(" ,")[0] not in CheckOwnerNoCommaent):#check for owner that dont need to print
+    if(NoComment.split("@")[1].split(" ,")[0] not in CheckOwnerNoComment):#check for owner that dont need to print
         print(NoComment)
 
